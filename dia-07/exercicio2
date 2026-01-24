@@ -1,0 +1,34 @@
+from random import randint
+
+print('''Escolha a dificuldade:
+      [1] - Fácil (1 a 50)
+      [2] - Médio (1 a 100)
+      [3] - Difícil(1 a 500)''')
+
+dificuldade = int(input("Digite a dificuldade: "))
+if dificuldade == 1:
+   numero_secreto = randint(1,50)
+
+elif dificuldade == 2:
+   numero_secreto = randint(1,100)
+
+elif dificuldade == 3:
+   numero_secreto = randint(1,500)
+      
+
+numero = 0
+
+tentativas = 0
+while numero != numero_secreto: 
+      numero = int(input(f"Tentativa {tentativas + 1} - Adivinhe o número: "))
+      if numero > numero_secreto:
+        print("Muito alto, tente novamente.")
+   
+      elif numero < numero_secreto:
+       print("Muito baixo, tente novamente.")
+      tentativas += 1
+                         
+
+else:
+  print(f"Número correto: {numero}. Você acertou em {tentativas} tentativas.")
+   
